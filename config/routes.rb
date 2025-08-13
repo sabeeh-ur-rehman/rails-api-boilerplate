@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     # V1
     namespace :v1 do
       draw :authentication
+      draw :leads
     end
   end
 end
