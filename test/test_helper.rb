@@ -27,6 +27,10 @@ class ActiveSupport::TestCase
   include Supports::ContractValidator
   include Supports::DoorkeeperAuthenticator
   include Supports::SidekiqMinitestSupport
+
+  setup do
+    Current.account = Account.first || create(:account)
+  end
 end
 
 Shoulda::Matchers.configure do |config|

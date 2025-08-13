@@ -9,5 +9,12 @@ module Users
 
       Success(user)
     end
+
+    private
+
+    def params
+      account = Current.account || Account.first || Account.create!(name: 'Default', subdomain: 'default')
+      super.merge(account:, role: :rep)
+    end
   end
 end
