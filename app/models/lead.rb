@@ -4,6 +4,7 @@ class Lead < ApplicationRecord
   include AccountScoped
 
   belongs_to :rep, class_name: 'User'
+  has_many :proposals, dependent: :destroy
 
   validates :project_name, :job_type, :spa_type, :rep, :client_request_date,
             :site_address, :customer_name, :customer_phone, :customer_email,
